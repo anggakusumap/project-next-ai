@@ -4,6 +4,7 @@ import './globals.css';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Login from './components/Login';
+import ClientProvider from './components/ClientProvider';
 
 export default async function RootLayout({
   children,
@@ -14,7 +15,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <title>GPT Clone</title>
+      <title>Genyol AI</title>
       <body>
         <SessionProvider session={ session }>
           { !session ?
@@ -27,6 +28,8 @@ export default async function RootLayout({
               </div>
 
               {/* ClientProvider - Notification */ }
+              <ClientProvider />
+
               <div className=' bg-[#343541] flex-1'>
                 { children }
               </div>

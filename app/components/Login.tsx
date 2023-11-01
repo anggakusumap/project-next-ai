@@ -14,7 +14,7 @@ const Login = () => {
                 alt={ 'logo' }
             />
             <p className='text-white font-bold text-3xl animate-pulse'>
-                Sign in to use GenyolGPT
+                Sign in to use Genyol AI
             </p>
 
 
