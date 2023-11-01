@@ -14,7 +14,7 @@ const query = async (prompt: string, chatId: string, model: string) => {
     .then((res) => res.choices)
     .catch(
       (err) =>
-        `ChatGPT was unable to find an answer for that! (Error: ${err.message})`
+        `Genyol AI was unable to find an answer for that! (Error: ${err.message})`
     );
   console.log("res", res);
 
