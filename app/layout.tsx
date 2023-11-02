@@ -16,15 +16,18 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <title>Genyol AI</title>
-      <body>
+      <body className='bg-black'>
         <SessionProvider session={ session }>
           { !session ?
             <Login />
             :
             <div className='flex'>
+              <div className='bg-[#202123] absolute max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
+                <SideBar />
+              </div>
               {/* SideBar */ }
               <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
-                <SideBar />
+                {/* <SideBar /> */ }
               </div>
 
               {/* ClientProvider - Notification */ }

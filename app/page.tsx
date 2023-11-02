@@ -48,9 +48,8 @@ const page = () => {
         </div>
       </div>
 
-      <p className='infoText bg-emerald-600 text-xl flex items-center justify-center w-full'>
-        <PlusIcon className='w-4 h-4 text-white font-bold' />
-        New Chat
+      <p className='infoText bg-gradient-to-r from-blue-400 to-indigo-700 rounded-full animate-pulse text-lg flex items-center justify-center w-full'>
+        Get Started
       </p>
     </div>
   );

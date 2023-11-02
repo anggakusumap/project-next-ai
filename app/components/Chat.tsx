@@ -18,7 +18,7 @@ const Chat = ({ chatId }: Props) => {
         collection(db, 'users', session.user?.email!, "chats", chatId, "messages"),
         orderBy('createdAt', 'asc')
     ));
-    console.log('messages', messages);
+
     return (
         <div className='flex-1 overflow-y-auto overflow-x-hidden'>
             { messages?.empty &&

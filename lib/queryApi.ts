@@ -16,7 +16,6 @@ const query = async (prompt: string, chatId: string, model: string) => {
       (err) =>
         `Genyol AI was unable to find an answer for that! (Error: ${err.message})`
     );
-  console.log("res", res);
 
   return res;
 };
