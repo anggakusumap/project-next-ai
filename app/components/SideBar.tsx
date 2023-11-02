@@ -41,7 +41,7 @@ const SideBar = () => {
 
             { session &&
                 <div className='flex items-center justify-center gap-5 cursor-pointer p-4 group flex-col rounded-xl bg-gray-700/50'>
-                    <div className='flex items-center justify-center'>
+                    <div className='flex flex-col md:flex  items-center justify-center'>
                         <Image src={ session.user?.image! } width={ 48 } height={ 48 } className="rounded-full cursor-pointer" alt="image" />
                         <p className='text-white font-semibold text-xl ml-2'>{ session.user?.name }</p>
                     </div>

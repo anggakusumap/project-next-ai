@@ -23,17 +23,17 @@ export default async function handler(
     return;
   }
 
-  // ChatGPT Query
+  // Genyol AI Query
   const response = await query(prompt, chatId, model);
 
   const message: Message = {
     text:
       JSON.stringify(response) ||
-      "ChatGPT was unable to find an answer for that!",
+      "Genyol AI was unable to find an answer for that!",
     createdAt: admin.firestore.Timestamp.now(),
     user: {
-      _id: "ChatGPT",
-      name: "ChatGPT",
+      _id: "Genyol AI",
+      name: "Genyol AI",
       avatar: "https://links.papareact.com/89k",
     },
   };

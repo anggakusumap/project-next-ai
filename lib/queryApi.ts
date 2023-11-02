@@ -11,7 +11,7 @@ const query = async (prompt: string, chatId: string, model: string) => {
       frequency_penalty: 0,
       presence_penalty: 0,
     })
-    .then((res) => res.choices)
+    .then((res) => res.choices[0].message.content)
     .catch(
       (err) =>
         `Genyol AI was unable to find an answer for that! (Error: ${err.message})`

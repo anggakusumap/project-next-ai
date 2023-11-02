@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Message = ({ message }: Props) => {
-    const isChatGPT = message.user.name === 'ChatGPT';
+    const isChatGPT = message.user.name === 'Genyol AI';
 
     return (
         <div className={ `py-5 text-white ${ isChatGPT && 'bg-[#434654]' }` }>
@@ -19,4 +19,4 @@ const Message = ({ message }: Props) => {
     );
 };
 
-export default Message;
+export default Message;;
