@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 import NewChat from './NewChat';
 import { signOut } from 'next-auth/react';
-import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import { ArrowLeftIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { collection, orderBy, query } from 'firebase/firestore';
 import { db } from '@/firebase';
@@ -23,9 +23,13 @@ const SideBar = () => {
     return (
         <div className='p-2 flex flex-col h-screen'>
             <div className='flex-1'>
+
                 <div className='space-y-4'>
-                    {/* New Chat */ }
-                    <NewChat />
+                    <div className='flex justify-between items-center gap-2'>
+                        {/* New Chat */ }
+                        <NewChat />
+                        <XCircleIcon className='h-8 w-8 text-white hover:text-sky-500 cursor-pointer' />
+                    </div>
 
                     {/* Map through the ChatRows */ }
                     { chats?.docs.map((chat) => {
@@ -42,8 +46,7 @@ const SideBar = () => {
                         <p className='text-white font-semibold text-xl ml-2'>{ session.user?.name }</p>
                     </div>
                     <hr className='border bg-white w-3/4' />
-                    <div className="text-white flex items-center justify-center gap-2 hover:text-green-600">
-                        <ArrowLeftIcon className='h-8 w-8' />
+                    <div className="text-white flex items-center justify-center gap-2 hover:text-sky-600">
                         <p className=' font-semibold cursor-pointer' onClick={ () => signOut() }>Sign Out</p>
                     </div>
                 </div>

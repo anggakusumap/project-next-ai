@@ -1,13 +1,11 @@
-'use client';
-
-import { PlusIcon } from '@heroicons/react/24/solid';
+"use client";
+import { db } from '@/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { db } from '../../firebase';
 import React from 'react';
 
-const NewChat = () => {
+const ButtonGetStarted = () => {
     const router = useRouter();
     const { data: session } = useSession();
     const createNewChat = async () => {
@@ -20,11 +18,10 @@ const NewChat = () => {
     };
 
     return (
-        <div onClick={ createNewChat } className='flex-1 border-gray-700 border chatRow hover:bg-gray-700/50'>
-            <PlusIcon className='h-4 w-4' />
-            <p>New Chats</p>
+        <div onClick={ createNewChat } className='cursor-pointer scale-90 hover:scale-100 transition transform ease-in-out duration-300 mt-10 infoText bg-gradient-to-r from-blue-400 to-indigo-700 rounded-full animate-pulse text-lg flex items-center justify-center w-full'>
+            Get Started
         </div>
     );
 };
 
-export default NewChat;
+export default ButtonGetStarted;

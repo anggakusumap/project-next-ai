@@ -34,7 +34,7 @@ export default async function handler(
     user: {
       _id: "Genyol AI",
       name: "Genyol AI",
-      avatar: "https://links.papareact.com/89k",
+      avatar: "/Genyol-nobg.png",
     },
   };
 

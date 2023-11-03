@@ -6,7 +6,7 @@ import { signIn } from 'next-auth/react';
 
 const Login = () => {
     return (
-        <div className='bg-black h-screen flex flex-col items-center justify-center text-center gap-4'>
+        <div className='h-screen flex flex-col items-center justify-center text-center gap-4'>
             <Image
                 src={ '/Genyol-nobg.png' }
                 width={ 300 }
@@ -14,11 +14,13 @@ const Login = () => {
                 alt={ 'logo' }
                 className={ 'animate-pulse -mt-44' }
             />
-            <p className='text-white font-bold text-5xl animate-pulse'>
+            <p className='text-white font-bold text-5xl'>
                 Genyol AI
             </p>
 
-
+            <p className='text-white text-base font-light'>
+                GENYOL The GOD
+            </p>
 
             <button
                 onClick={ () => signIn('google') }
@@ -28,12 +30,9 @@ const Login = () => {
                 Sign in with Google
             </button>
 
-            <p className='text-white text-base font-light animate-pulse'>
-                GENYOL The GOD
-            </p>
             <p className='text-white/80 font-bold text-md absolute bottom-36'>
                 Build with love by Angga Kusuma <br />
-                Powered by Open AI
+                &copy; 2023 - Powered by Open AI
             </p>
         </div >
     );
