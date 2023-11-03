@@ -1,11 +1,14 @@
 'use client';
 
 import { db } from '@/firebase';
+import { setSideBar } from '@/redux/features/tool-slice';
+import { useAppSelector } from '@/redux/store';
 import { Bars3Icon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 
 type Props = {
     chatId: string;
@@ -14,6 +17,7 @@ type Props = {
 const ChatInput = ({ chatId }: Props) => {
     const [ prompt, setPrompt ] = useState("");
     const { data: session } = useSession();
+    const dispatch = useDispatch();
 
     // TODO useSWR to get model
     const model = "gpt-3.5-turbo";
@@ -62,10 +66,12 @@ const ChatInput = ({ chatId }: Props) => {
         });
     };
 
+    const sideBarShow = useAppSelector(state => state.toolReducer.sideBar);
+
     return (
         <div className='flex gap-4 justify-between p-4'>
-            <div className='flex md:hidden justify-center items-center '>
-                <Bars3Icon className='w-10 h-10 font-bold text-white' />
+            <div className={ `flex justify-center items-center cursor-pointer ${ sideBarShow && 'hidden' }` }>
+                <Bars3Icon onClick={ () => dispatch(setSideBar(true)) } className='w-10 h-10 font-bold text-white hover:text-sky-500' />
             </div>
 
             <div className='bg-gray-700/50 text-gray-400 rounded-lg text-sm w-full'>
@@ -81,7 +87,7 @@ const ChatInput = ({ chatId }: Props) => {
 
                     <button
                         type='submit'
-                        className='bg-sky-500 px-4 py-2 rounded text-white font-bold disabled:bg-gray-300 disabled::cursor-not-allowed'
+                        className='bg-sky-500/50 px-4 py-2 rounded text-white font-bold disabled:bg-gray-300 disabled::cursor-not-allowed'
                         disabled={ !session || !prompt }>
                         <PaperAirplaneIcon className='h-4 w-4 -rotate-45' />
                     </button>

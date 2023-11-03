@@ -7,7 +7,7 @@ const page = () => {
     <div className='flex flex-col items-center justify-center h-screen px-2 gap-4 text-white'>
       <h1 className=' text-5xl font-bold mb-20'>Genyol AI</h1>
 
-      <div className='flex space-x-4 text-center'>
+      <div className='flex space-x-4 px-4 text-center'>
         <div>
           <div className='flex flex-col items-center justify-center mb-5'>
             <SunIcon className="h-8 w-8 text-green-500" />

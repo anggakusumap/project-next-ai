@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Login from './components/Login';
 import ClientProvider from './components/ClientProvider';
+import { ReduxProvider } from '@/redux/provider';
 
 export default async function RootLayout({
   children,
@@ -15,29 +16,30 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <title>Genyol AI - The GOD</title>
+      <head>
+        <title>Genyol AI - The GOD</title>
+        <meta name="description" content="Genyol AI – where innovation meets simplicity. Our AI is your Gateway to Optimal Development (GOD). I'm Genyol the GOD" />
+        <meta property="og:image" content="/Genyol.png" />
+      </head>
       <body className='bg-[#212121]'>
         <SessionProvider session={ session }>
-          { !session ?
-            <Login />
-            :
-            <div className='flex'>
-              <div className='bg-[#212121] absolute max-w-xs h-screen overflow-y-auto md:min-w-[20rem] z-10'>
+          <ReduxProvider>
+            { !session ?
+              <Login />
+              :
+              <div className='flex'>
+                {/* SideBar */ }
                 <SideBar />
-              </div>
-              {/* SideBar */ }
-              <div className='bg-[#065471] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
-                {/* <SideBar /> */ }
-              </div>
 
-              {/* ClientProvider - Notification */ }
-              <ClientProvider />
+                {/* ClientProvider - Notification */ }
+                <ClientProvider />
 
-              <div className=' bg-[#323232] flex-1'>
-                { children }
+                <div className=' bg-[#323232] flex-1'>
+                  { children }
+                </div>
               </div>
-            </div>
-          }
+            }
+          </ReduxProvider>
         </SessionProvider>
       </body>
     </html>
