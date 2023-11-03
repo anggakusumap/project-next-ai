@@ -12,7 +12,7 @@ const Login = () => {
                 width={ 300 }
                 height={ 300 }
                 alt={ 'logo' }
-                className={ 'animate-pulse -mt-44' }
+                className={ 'animate-pulse -mt-22' }
             />
             <p className='text-white font-bold text-5xl'>
                 Genyol AI
@@ -30,7 +30,7 @@ const Login = () => {
                 Sign in with Google
             </button>
 
-            <p className='text-white/80 font-bold text-md absolute bottom-36'>
+            <p className='text-white/80 font-bold text-md mt-20'>
                 Build with love by Angga Kusuma <br />
                 &copy; 2023 - Powered by Open AI
             </p>
