@@ -20,6 +20,11 @@ export default async function RootLayout({
         <title>Genyol AI - The GOD</title>
         <meta name="description" content="Genyol AI – where innovation meets simplicity. Our AI is your Gateway to Optimal Development (GOD). I'm Genyol the GOD" />
         <meta property="og:image" content="/Genyol.png" />
+        <meta charSet="utf-8"></meta>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        ></meta>
       </head>
       <body className='bg-[#212121]'>
         <SessionProvider session={ session }>
