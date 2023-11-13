@@ -30,7 +30,7 @@ const SideBar = () => {
     return (
         <>
             <div className={ `bg-[#212121] absolute md:relative max-w-xs h-screen overflow-y-auto md:min-w-[20rem] z-10 ${ sideBarShow === false && 'hidden' }` }>
-                <div className='p-2 flex flex-col h-screen'>
+                <div className=' p-6 flex flex-col h-screen'>
                     <div className='flex-1'>
                         <div className='space-y-4'>
                             <div className='flex justify-between items-center gap-2'>
