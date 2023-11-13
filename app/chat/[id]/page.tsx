@@ -9,8 +9,9 @@ type Props = {
 };
 
 const page = ({ params: { id } }: Props) => {
+
     return (
-        <div className='flex flex-col h-screen p-4 md:p-2'>
+        <div className='p-4 md:p-6'>
             {/* Chat */ }
             <Chat chatId={ id } />
             {/* Chat Input */ }

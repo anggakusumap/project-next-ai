@@ -26,7 +26,7 @@ export default async function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></meta>
       </head>
-      <body className='bg-[#212121]'>
+      <body className='bg-[#323232]'>
         <SessionProvider session={ session }>
           <ReduxProvider>
             { !session ?
@@ -39,7 +39,7 @@ export default async function RootLayout({
                 {/* ClientProvider - Notification */ }
                 <ClientProvider />
 
-                <div className=' bg-[#323232] flex-1 overflow-y-hidden'>
+                <div className=' bg-[#323232] flex-1 overflow-y-auto overflow-x-hidden  w-full'>
                   { children }
                 </div>
               </div>

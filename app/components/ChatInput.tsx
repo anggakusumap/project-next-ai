@@ -69,15 +69,15 @@ const ChatInput = ({ chatId }: Props) => {
     const sideBarShow = useAppSelector(state => state.toolReducer.sideBar);
 
     return (
-        <div className='flex gap-4 justify-between'>
-            <div className={ `flex justify-center items-center cursor-pointer ${ sideBarShow && 'hidden' }` }>
+        <div className={ `flex gap-4 fixed bottom-0 left-0 py-2 px-4 bg-[#323232] w-full ${ sideBarShow ? 'hidden md:flex left-auto px-0 pr-6' : '' }` }>
+            <div className={ `flex justify-center items-center cursor-pointer ${ sideBarShow ? 'hidden' : '' }` }>
                 <Bars3Icon onClick={ () => dispatch(setSideBar(true)) } className='w-10 h-10 font-bold text-white hover:text-sky-500' />
             </div>
 
-            <div className='bg-gray-700/50 text-gray-400 rounded-lg text-sm w-full'>
+            <div className={ `bg-gray-700/50 text-gray-400 rounded-lg text-sm w-full ${ sideBarShow ? ' w-[75%]' : 'w-full' }` }>
                 <form onSubmit={ sendMessage } className='p-5 space-x-5 flex'>
                     <input
-                        className=' bg-transparent focus:outline-none flex-1 disabled:cursor-not-allowed disabled:text-gray-300'
+                        className='bg-transparent focus:outline-none flex-1 disabled:cursor-not-allowed disabled:text-gray-300'
                         value={ prompt }
                         disabled={ !session }
                         onChange={ e => setPrompt(e.target.value) }
@@ -87,13 +87,14 @@ const ChatInput = ({ chatId }: Props) => {
 
                     <button
                         type='submit'
-                        className='bg-sky-500/50 px-4 py-2 rounded text-white font-bold disabled:bg-gray-300 disabled::cursor-not-allowed'
+                        className='bg-sky-500/50 px-4 py-2 rounded text-white font-bold disabled:bg-gray-300 disabled:cursor-not-allowed'
                         disabled={ !session || !prompt }>
                         <PaperAirplaneIcon className='h-4 w-4 -rotate-45' />
                     </button>
                 </form>
             </div>
         </div>
+
     );
 };
 

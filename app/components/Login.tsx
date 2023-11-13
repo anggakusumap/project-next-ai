@@ -6,11 +6,11 @@ import { signIn } from 'next-auth/react';
 
 const Login = () => {
     return (
-        <div className='h-screen flex flex-col items-center justify-center text-center gap-4'>
+        <div className='h-screen flex flex-col items-center justify-center text-center gap-4 overflow-hidden'>
             <Image
                 src={ '/Genyol-nobg.png' }
-                width={ 300 }
-                height={ 300 }
+                width={ 200 }
+                height={ 200 }
                 alt={ 'logo' }
                 className={ 'animate-pulse -mt-22' }
             />

@@ -5,7 +5,7 @@ import ButtonGetStarted from './components/Button/ButtonGetStarted';
 const page = () => {
   return (
     <div className='flex flex-col items-center justify-center h-screen px-2 gap-4 text-white'>
-      <h1 className=' text-5xl font-bold'>Genyol AI</h1>
+      <h1 className='text-2xl md:text-5xl font-bold'>Genyol AI</h1>
 
       <div className='flex space-x-4 px-4 text-center'>
         <div>

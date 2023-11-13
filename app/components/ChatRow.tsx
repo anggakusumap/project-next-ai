@@ -30,11 +30,10 @@ const ChatRow = ({ id }: Props) => {
         router.replace('/');
     };
 
-
     return (
         <Link href={ `/chat/${ id }` } className={ `chatRow justify-center hover:bg-gray-700 ${ active && 'bg-gray-700' }` }>
             <ChatBubbleLeftIcon className='h-5 w-5' />
-            <p className='flex-1 hidden md:inline-flex truncate'>
+            <p className='flex-1 inline-flex truncate'>
                 { messages?.docs[ messages.docs.length - 1 ]?.data().text || 'New Chat' }
             </p>
             <TrashIcon onClick={ removeChat } className='h-5 w-5 hover:text-red-700' />
