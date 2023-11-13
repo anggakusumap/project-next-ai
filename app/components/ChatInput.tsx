@@ -69,7 +69,7 @@ const ChatInput = ({ chatId }: Props) => {
     const sideBarShow = useAppSelector(state => state.toolReducer.sideBar);
 
     return (
-        <div className='flex gap-4 justify-between p-4'>
+        <div className='flex gap-4 justify-between'>
             <div className={ `flex justify-center items-center cursor-pointer ${ sideBarShow && 'hidden' }` }>
                 <Bars3Icon onClick={ () => dispatch(setSideBar(true)) } className='w-10 h-10 font-bold text-white hover:text-sky-500' />
             </div>
