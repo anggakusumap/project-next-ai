@@ -18,7 +18,7 @@ const ButtonGetStarted = () => {
     };
 
     return (
-        <div onClick={ createNewChat } className='cursor-pointer scale-90 hover:scale-100 transition transform ease-in-out duration-300 mt-10 infoText bg-gradient-to-r from-blue-400 to-indigo-700 rounded-full animate-pulse text-lg flex items-center justify-center w-full'>
+        <div onClick={ createNewChat } className='cursor-pointer scale-90 hover:scale-100 transition transform ease-in-out duration-300 infoText bg-gradient-to-r from-blue-400 to-indigo-700 rounded-full animate-pulse text-lg flex items-center justify-center w-full'>
             Get Started
         </div>
     );

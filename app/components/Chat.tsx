@@ -23,7 +23,7 @@ const Chat = ({ chatId }: Props) => {
         <div className='flex-1 overflow-y-auto'>
             { messages?.empty &&
                 <>
-                    <p className='mt-10 text-center text-white'>
+                    <p className='text-center text-white'>
                         Type a prompt in below to get started!
                     </p>
                     <ArrowDownCircleIcon className='h-10 w-10 mx-auto mt-5 text-white animate-bounce' />
